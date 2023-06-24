@@ -40,7 +40,7 @@ The application allows you to perform the following operations:
 - `GET /tasks`: Retrieve all tasks.
 - `GET /tasks/:id`: Retrieve a single task by its ID.
 - `GET /tasks?sortBy=createdAt`: Sort tasks by creation time.
-- `GET /tasks?flag=true/false`: Filter tasks by completion status.
+- `GET /tasks?flag=true`: Filter tasks by completion status.
 - `GET /tasks/priority/:level`: Retrieve tasks based on priority level [low,medium,high].
 - `POST /tasks`: Create a new task.
 - `PUT /tasks/:id`: Update an existing task by its ID.
@@ -50,8 +50,18 @@ Tasks have the following attributes:
 
 - `title`: The title of the task (required).
 - `description`: The description of the task (required).
-- `completed`: A flag for completion status (boolean value, default is false).
+- `flag`: A flag for completion status (boolean value, default is false).
 - `priority`: The priority level of the task (string value, can be "low", "medium", or "high").
+
+Example JSON request for creating a task
+```
+{
+    "title": "Airtribe assignment",
+    "description": "Complete task manager API",
+    "flag": true,
+    "priority": "High"
+}
+```
 
 ## Error Handling
 
@@ -68,7 +78,7 @@ The API can be tested using Postman or Curl to ensure it works as expected. Use 
 - `GET /tasks`: Retrieve all tasks.
 - `GET /tasks/:id`: Retrieve a single task by its ID.
 - `GET /tasks?sortBy=createdAt`: Sort tasks by creation time.
-- `GET /tasks?flag=true/false`: Filter tasks by completion status.
+- `GET /tasks?flag=true`: Filter tasks by completion status.
 - `GET /tasks/priority/:level`: Retrieve tasks based on priority level [low,medium,high].
 - `POST /tasks`: Create a new task.
 - `PUT /tasks/:id`: Update an existing task by its ID.
