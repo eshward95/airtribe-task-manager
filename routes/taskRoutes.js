@@ -1,7 +1,7 @@
 const express = require("express");
 const taskController = require("../controller/taskController");
 const router = express.Router();
-// middleware to intercept route with id in tour api
+// middleware to intercept route with id in api
 router.param("id", taskController.checkId);
 router
   .route("/")
